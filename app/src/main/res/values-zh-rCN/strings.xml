@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">抗击肺炎小工具</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_ncov2019">2019新型冠状病毒</string>
+    <string name="title_dashboard">导航</string>
+    <string name="title_home">首页</string>
+    <string name="title_notifications">通知</string>
+    <string name="action_url_ncov_bilibili">Bilibili数据源</string>
+    <string name="action_url_ncov_dxy">丁香园数据源</string>
+    <string name="action_url_ncov_tencent">腾讯新闻数据源</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="title_mask_monitor">口罩监控</string>
+    <string name="title_monitor">监控</string>
+</resources>

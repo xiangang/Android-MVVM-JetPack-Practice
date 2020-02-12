@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nxg.jetpackdemo01.MainActivity" >
+
+    <item android:id="@+id/action_mask_monitor"
+        android:title="@string/title_mask_monitor"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_url_ncov_dxy"
+        android:title="@string/action_url_ncov_dxy"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_url_ncov_bilibili"
+        android:title="@string/action_url_ncov_bilibili"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_url_ncov_tencent"
+        android:title="@string/action_url_ncov_tencent"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>
