@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JetpackDemo01</string>
+    <string name="app_name">COVID-19</string>
     <string name="action_settings">Settings</string>
     <string name="action_url_ncov_dxy">Dingxiangyuan</string>
     <string name="action_url_ncov_bilibili">Bilibili</string>
@@ -13,8 +13,8 @@
     <string name="title_monitor">Monitoring</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_title">Fighting pneumonia</string>
+    <string name="nav_header_subtitle">Real-time tracking of outbreaks, monitoring of replenishment of medical supplies</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
 
     <!-- Preference Titles -->

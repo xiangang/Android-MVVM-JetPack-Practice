@@ -13,26 +13,12 @@ import com.nxg.jetpackdemo01.utils.NCOV_2019_URL_TENCENT
  * <a href="https://github.com/xiangang">Follow me</a>
  * ================================================
  */
-class COVID19ViewModel(private val repository: NCov2019Repository) : ViewModel() {
-
-    private val _url =  MutableLiveData<String>().apply {
-        value = NCOV_2019_URL_TENCENT
-    }
-
-    val nCov2019Url: MutableLiveData<String> = _url
+class ThemeViewModel() : ViewModel() {
 
     private val _themeColor =  MutableLiveData<Int>().apply {
         value = R.color.colorPrimaryTencent
     }
 
     val themeColor: MutableLiveData<Int> = _themeColor
-
-    fun setUrl(url: String ) {
-        nCov2019Url.postValue(url)
-    }
-
-    fun getTimelineService() = repository.getTimelineService()
-
-
 
 }

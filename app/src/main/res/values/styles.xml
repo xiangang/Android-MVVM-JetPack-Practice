@@ -58,6 +58,8 @@
     </style>
     <!-- dark skin -->
     <style name="app_skin_dark" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimaryTencent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryTencent</item>
         <item name="qmui_skin_support_color_separator">@color/qmui_config_color_25_white</item>
         <item name="qmui_skin_support_tab_bg">@color/qmui_config_color_pure_black</item>
         <item name="qmui_skin_support_tab_normal_color">?attr/qmui_config_color_gray_3</item>
@@ -102,6 +104,8 @@
 
     <!-- white skin -->
     <style name="app_skin_white" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimarySMZDM</item>
+        <item name="colorPrimaryDark">@color/colorPrimarySMZDM</item>
         <item name="qmui_skin_support_topbar_title_color">@color/qmui_config_color_pure_black</item>
         <item name="qmui_skin_support_topbar_subtitle_color">@color/qmui_config_color_gray_3</item>
         <item name="qmui_skin_support_topbar_text_btn_color_state_list">@color/qmui_config_color_pure_black

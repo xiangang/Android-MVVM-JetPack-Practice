@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.nxg.jetpackdemo01.R
 import com.nxg.jetpackdemo01.utils.NCOV_2019_URL_QQ_FY_TOOLS
@@ -17,6 +18,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class DashboardFragment : Fragment() {
 
     private val mViewModelCOVID19: COVID19ViewModel by viewModel()
+
+    //private val dashboardViewModel: DashboardViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

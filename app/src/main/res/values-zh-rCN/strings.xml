@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">抗击肺炎小工具</string>
     <string name="action_settings">设置</string>
-    <string name="title_activity_ncov2019">2019新型冠状病毒</string>
+    <string name="title_activity_ncov2019">抗击疫情</string>
     <string name="title_dashboard">导航</string>
     <string name="title_home">首页</string>
     <string name="title_notifications">通知</string>
@@ -12,4 +12,6 @@
     <string name="title_activity_settings">设置</string>
     <string name="title_mask_monitor">口罩监控</string>
     <string name="title_monitor">监控</string>
+    <string name="nav_header_title">抗击疫情</string>
+    <string name="nav_header_subtitle">疫情实时追踪，医疗物资补货监控</string>
 </resources>
