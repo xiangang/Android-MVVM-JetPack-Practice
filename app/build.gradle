@@ -4,7 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "com.nxg.jetpackdemo01"
         minSdkVersion 23
@@ -17,10 +19,24 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file('../nongxiangang_android.jks')
+            storePassword project.hasProperty("storePassword") ? STORE_PASSWORD : System.getenv("storePassword")//指定密钥参数
+            keyAlias project.hasProperty("keyAlias") ? KEY_ALIAS : System.getenv("keyAlias")
+            keyPassword project.hasProperty("keyPassword") ? KEY_PASSWORD : System.getenv("keyPassword")//指定密钥参数
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true //是否启用zipAlign压缩
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            multiDexEnabled = true
+            versionNameSuffix = 'COVID-19'
         }
     }
 
