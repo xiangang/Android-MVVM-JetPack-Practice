@@ -1,7 +1,9 @@
 language: android
 jdk:
 - oraclejdk8
-- openjdk8
+git:
+  depth: 3 #将git depth设置相对小的值,加快构建速度
+sudo: required
 dist: trusty
 env:
   global:
@@ -22,8 +24,6 @@ android:
   - android-sdk-license-.+
   - google-gdk-license-.+
 before_install:
-- openssl aes-256-cbc -K $encrypted_584d59bedd34_key -iv $encrypted_584d59bedd34_iv
-  -in nongxiangang_android.jks.enc -out nongxiangang_android.jks -d
 - chmod +x gradlew
 - gem install fir-cli
 script:
