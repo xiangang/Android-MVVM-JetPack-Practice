@@ -3,6 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
 android {
 
     compileSdkVersion 28
@@ -31,9 +35,9 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             shrinkResources true //是否清理无用资源,依赖于minifyEnabled
             zipAlignEnabled true //是否启用zipAlign压缩
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             multiDexEnabled = true
             versionNameSuffix = 'COVID-19'

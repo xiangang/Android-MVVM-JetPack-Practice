@@ -3,24 +3,31 @@ jdk:
 - oraclejdk8
 - openjdk8
 dist: trusty
+env:
+  global:
+  - ANDROID_API=28
+  - ANDROID_BUILD_TOOLS=28.0.3
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    # - tools
-    # - platform-tools
-
-    # The BuildTools version used by your project
-    - build-tools-28.0.3
-
-    # The SDK version used to compile your project
-    - android-28
-    
-    script: - "./gradlew assembleRelease"
-    before_install: 
-    - chmod +x gradlew
-    - gem install fir-cli #安装fir命令行客户端
-
+  - tools
+  - platform-tools
+  - build-tools-$ANDROID_BUILD_TOOLS
+  - android-$ANDROID_API
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-android-$ANDROID_API
+  - sys-img-armeabi-v7a-android-$EMULATOR_API
+  licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+before_install:
+- openssl aes-256-cbc -K $encrypted_584d59bedd34_key -iv $encrypted_584d59bedd34_iv
+  -in nongxiangang_android.jks.enc -out nongxiangang_android.jks -d
+- chmod +x gradlew
+- gem install fir-cli
+script:
+- "./gradlew assembleRelease"
 deploy:
   provider: releases
   api_key:
@@ -29,8 +36,7 @@ deploy:
   on:
     repo: xiangang/Android-MVVM-JetPack-Practice
     tags: true
-  
-  after_deploy:    
-    - fir login dc0f4aacac2b8f748453b4dec903f9ac #fir账号的Token    
-    - fir me #打印身份信息,验证是否登录成功
-    - fir p app/build/outputs/apk/app-release.apk #自动发布应用至fir内测平台
+  after_deploy:
+  - fir login dc0f4aacac2b8f748453b4dec903f9ac
+  - fir me
+  - fir p app/build/outputs/apk/app-release.apk
