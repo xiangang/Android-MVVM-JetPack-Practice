@@ -32,8 +32,6 @@ deploy:
   on:
     repo: xiangang/Android-MVVM-JetPack-Practice
     tags: true
-after_script:
-- fir publish app/build/outputs/apk/release/app-universal-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
 notifications:
   email:
   - xiangang12202@hotmail.com
