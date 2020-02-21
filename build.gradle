@@ -46,6 +46,7 @@ buildscript {
         loggerVersion = "2.1.1"
     }
     repositories {
+        //CI无法访问aliyun
         maven { url "https://jitpack.io" }
         google()
         jcenter()
