@@ -46,11 +46,11 @@ buildscript {
         loggerVersion = "2.1.1"
     }
     repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://jitpack.io" }
         google()
         jcenter()
-        
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
@@ -61,11 +61,11 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://jitpack.io" }
         google()
         jcenter()
-        
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
     }
 }
 
