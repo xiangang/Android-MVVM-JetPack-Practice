@@ -1,9 +1,9 @@
 language: android
-os:linux
 jdk:
 - oraclejdk8
 git:
   depth: 3 #将git depth设置相对小的值,加快构建速度
+sudo: required
 dist: trusty
 env:
   global:
@@ -15,23 +15,28 @@ android:
   - platform-tools
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
-  - extra
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-android-$ANDROID_API
+  - sys-img-armeabi-v7a-android-$EMULATOR_API
+  licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
 before_install:
 - chmod +x gradlew
-- rvm install 2.6.2
 - gem install fir-cli
 script:
 - "./gradlew assembleRelease"
 deploy:
   provider: releases
-  token:
+  api_key:
     secure: dajgZIZYFVQP3hlhqFxRpcG0sbAuKOzDJBOzb8YCdmOL628I/swt02atLwkF9htfHH7etTm+I+xCnktjx3jWrbp2+x8tZIxJnAZugpqtDF6ybJsQ73n8Bp9wXs9Acg7/iGiDHKLGB6giZHcnXBGkG71jd2gf0pg3nPEWeTnGuONQnWW0VcRugCndDivsvSK7soM1Nqg8xNMVB+7C5T5MisewxqTgd+7ZFS/71EbvJS6Lx8bN06j8DRNAKV5qnI5wwkuFMH2d2lBDlsxFa+gtWfGq5N0V7HvGD3ajvTuGvsORApmGJyVSI5mfKla4gcW0/UMYZgjr1/M6F4aSj0OuUkdHpNRVcLsJSHRa5A1/0390Z1fefWsxgIhP4i9RvGYluW2ktIiaRo1qbZ7pyYvqf1RFYLr25DfzxyG9d6BrLCYlPhW064SXwPMSOTl1XZA3lKm3VHtXTChP9acTXPOPO4nI7r3IA8hzJMRANvcGH5nhcQAXlCM8fINxPSEWbHVziCZv+2U+bt63LJs4MegWYlNPVIxU+n9yxsYYB0UJWwDR0FqhGBkIvLiz0Rbg+zD2q98F0FLX8kLK2Uk8F69f+k8hRH0+0/UmS221vNe2/HnbjymjEsA9Cv+6nqtwd3UpxtPqFeR5yrrLRchadVp4F4h6R3WBBGFHYDfSLIU0c2s=
   file: app/build/outputs/apk/app-universal-release.apk
-  # 避免 Travis CI在部署之前清空生成的APK文件
-  skip_cleanup: true
   on:
     repo: xiangang/Android-MVVM-JetPack-Practice
     tags: true
-notifications:
-  email:
-  - xiangang12202@hotmail.com
+  after_deploy:
+  - fir login dc0f4aacac2b8f748453b4dec903f9ac
+  - fir me
+  - fir p app/build/outputs/apk/release/app-universal-release.apk
