@@ -32,11 +32,11 @@ deploy:
   provider: releases
   api_key:
     secure: dajgZIZYFVQP3hlhqFxRpcG0sbAuKOzDJBOzb8YCdmOL628I/swt02atLwkF9htfHH7etTm+I+xCnktjx3jWrbp2+x8tZIxJnAZugpqtDF6ybJsQ73n8Bp9wXs9Acg7/iGiDHKLGB6giZHcnXBGkG71jd2gf0pg3nPEWeTnGuONQnWW0VcRugCndDivsvSK7soM1Nqg8xNMVB+7C5T5MisewxqTgd+7ZFS/71EbvJS6Lx8bN06j8DRNAKV5qnI5wwkuFMH2d2lBDlsxFa+gtWfGq5N0V7HvGD3ajvTuGvsORApmGJyVSI5mfKla4gcW0/UMYZgjr1/M6F4aSj0OuUkdHpNRVcLsJSHRa5A1/0390Z1fefWsxgIhP4i9RvGYluW2ktIiaRo1qbZ7pyYvqf1RFYLr25DfzxyG9d6BrLCYlPhW064SXwPMSOTl1XZA3lKm3VHtXTChP9acTXPOPO4nI7r3IA8hzJMRANvcGH5nhcQAXlCM8fINxPSEWbHVziCZv+2U+bt63LJs4MegWYlNPVIxU+n9yxsYYB0UJWwDR0FqhGBkIvLiz0Rbg+zD2q98F0FLX8kLK2Uk8F69f+k8hRH0+0/UmS221vNe2/HnbjymjEsA9Cv+6nqtwd3UpxtPqFeR5yrrLRchadVp4F4h6R3WBBGFHYDfSLIU0c2s=
-  file: ''
+  file: app/build/outputs/apk/app-universal-release.apk
   on:
     repo: xiangang/Android-MVVM-JetPack-Practice
     tags: true
   after_deploy:
   - fir login dc0f4aacac2b8f748453b4dec903f9ac
   - fir me
-  - fir p app/build/outputs/apk/app-release.apk
+  - fir p app/build/outputs/apk/release/app-universal-release.apk

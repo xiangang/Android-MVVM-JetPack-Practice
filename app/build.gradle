@@ -25,10 +25,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('../nongxiangang_android.jks')
-            storePassword project.hasProperty("storePassword") ? STORE_PASSWORD : System.getenv("storePassword")//指定密钥参数
-            keyAlias project.hasProperty("keyAlias") ? KEY_ALIAS : System.getenv("keyAlias")
-            keyPassword project.hasProperty("keyPassword") ? KEY_PASSWORD : System.getenv("keyPassword")//指定密钥参数
+            storeFile file('../demo.jks')
+            storePassword project.hasProperty("STORE_PASSWORD") ? STORE_PASSWORD.toString() : System.getenv("storePassword")//指定密钥参数
+            keyAlias project.hasProperty("KEY_ALIAS") ? KEY_ALIAS.toString() : System.getenv("keyAlias")
+            keyPassword project.hasProperty("KEY_PASSWORD") ? KEY_PASSWORD.toString() : System.getenv("keyPassword")//指定密钥参数
         }
     }
 
@@ -40,7 +40,7 @@ android {
             zipAlignEnabled true //是否启用zipAlign压缩
             signingConfig signingConfigs.release
             multiDexEnabled = true
-            versionNameSuffix = 'COVID-19'
+            versionNameSuffix = ''
         }
     }
 
