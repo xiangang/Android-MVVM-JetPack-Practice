@@ -15,16 +15,10 @@ android:
   - platform-tools
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - sys-img-armeabi-v7a-android-$ANDROID_API
-  - sys-img-armeabi-v7a-android-$EMULATOR_API
-  licenses:
-  - android-sdk-preview-license-.+
-  - android-sdk-license-.+
-  - google-gdk-license-.+
+  - extra
 before_install:
 - chmod +x gradlew
+- rvm install 2.6.2
 - gem install fir-cli
 script:
 - "./gradlew assembleRelease"
@@ -40,3 +34,6 @@ deploy:
   - fir login dc0f4aacac2b8f748453b4dec903f9ac
   - fir me
   - fir p app/build/outputs/apk/release/app-universal-release.apk
+notifications:
+  email:
+  - xiangang12202@hotmail.com
