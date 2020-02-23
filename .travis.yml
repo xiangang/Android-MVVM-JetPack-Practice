@@ -36,7 +36,7 @@ deploy:
 after_script:
 - fir login dc0f4aacac2b8f748453b4dec903f9ac
 - fir me
-- fir publish app/build/outputs/apk/release/app-universal-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+- fir publish app/build/outputs/apk/release/app-universal-release.apk -T $FIR_TOKEN -b nongxiangang -c "`git cat-file tag $TRAVIS_TAG`"
 notifications:
   email:
   - xiangang12202@hotmail.com
